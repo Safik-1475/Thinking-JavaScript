@@ -64,46 +64,46 @@
 // safik.sleep();
 
 
-// function Info (name,age){
-//      this.name = name;
-//      this.age = age;
+function Info (name,age){
+     this.name = name;
+     this.age = age;
      
-// };
-// Info.prototype = {
-//     eat(){
-//         console.log('Shakib is eating');
-//     },
-//     sleep(){
-//         console.log(`Shakib is sleeping`);
-//     },
-//     play(){
-//         console.log(`Shakib is playing`);
-//     }
-// };
+};
+Info.prototype = {
+    eat(){
+        console.log('Shakib is eating');
+    },
+    sleep(){
+        console.log(`Shakib is sleeping`);
+    },
+    play(){
+        console.log(`Shakib is playing`);
+    }
+};
 
-// const shakib = new Info('Shakib',32);
-// shakib.eat();
-// const tamim = new Info('Tamim',34);
+const shakib = new Info('Shakib',32);
+shakib.eat();
+const tamim = new Info('Tamim',34);
 
 // CONVERT CLASS FUNCTION JAVASCRIPT 
 
-// class PersonalInfo {
-//     constructor (name,age){
-//         this.name = name;
-//         this.age = age;
-//     }
-//     eat(){
-//         console.log(`Tamim is eating`);
-//     }
-//     play(){
-//         console.log(`Tamim is playing`);
-//     }
-//     sleep(){
-//         console.log(`Tamim is sleeping`);
-//     }
-// }
-// const tamim = new PersonalInfo('Tamim Iqbal',35);
-// tamim.play();
+class PersonalInfo {
+    constructor (name,age){
+        this.name = name;
+        this.age = age;
+    }
+    eat(){
+        console.log(`Tamim is eating`);
+    }
+    play(){
+        console.log(`Tamim is playing`);
+    }
+    sleep(){
+        console.log(`Tamim is sleeping`);
+    }
+}
+const tamim2 = new PersonalInfo('Tamim Iqbal',35);
+tamim2.play();
 
 
 function Information1 (name,age){
@@ -121,7 +121,46 @@ Information1.prototype = {
     }
 };
 
-const tamim = Information1('Tamim',43);
-tamim.play();
+const tamim3 = Information1('Tamim',43);
+tamim3.play();
 
+// Hidden Object create and return 
+
+function Information2(x,y){
+    this.x = x;
+    this.y = y;
+}
+Information2.prototype = {
+    run(){
+        console.log(`Rohim is run everyday`);
+    },
+    weakup(){
+        console.log(`Said weakup at 6 am in the morning`);
+    }
+};
+
+const rohim = new Information2();
+rohim.run();
+const said = new Information2();
+said.weakup();
+
+
+// class constructors
+
+class Information3{
+    constructor(nam,age){
+        this.nam = nam;
+        this.age = age;
+    }
+    Hamza(){
+        console.log(`Hamza is a Footballer Of liverpool`);
+    }
+    HamzaCho(){
+        console.log(`Hamza nationality of Bangladesh`);
+    }
+}
+const hamza = new Information3();
+hamza.Hamza();
+const hamzaN = new Information3();
+hamzaN.HamzaCho();
 

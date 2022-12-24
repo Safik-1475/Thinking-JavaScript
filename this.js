@@ -53,5 +53,46 @@ const Person = function(name,age){
 };
 const safikur = Person('Safikur Rahman',21);
 // console.log(safikur);
-safikur.person();
-safikur.father.person();
+// safikur.person();
+// safikur.father.person();
+
+// EXPLICIT BINDING EXAMPLES 
+
+const firstPerson = function(age,html,css,js,rect){
+    console.log(`Name : ${this.name} Profession : ${this.profession}, Salary : ${this.salary}, Age : ${age} ${html}, ${css}, ${js}, ${rect}`);
+}
+
+const firstPersonObj = {
+    name : 'Safikur Rahman',
+    profession : 'Frontend Engineer',
+    salary : '$1600 Per Month',
+}
+// firstPerson.call(firstPersonObj, 21,'HTML','CSS');
+// firstPerson.apply(firstPersonObj,[21,'HTML','CSS','JAVASCRIPT','REACT JS']);
+
+const html = 'Hyper Text Markup Languages';
+const css = 'Cascading Style sheet';
+const js = 'JavaScript is Programming Language';
+
+const newFunc = firstPerson.bind(firstPersonObj,html,css,js);
+// newFunc();
+
+// NEW BINDING 
+const SecondPerson = function(name,age){
+    this.name = name;
+    this.age = age;
+    console.log(`${name} is ${age} year old`);
+}
+const swe = new SecondPerson('Safikur Rahman',21);
+// console.log(swe);
+
+// WINDOWN BINDING
+const WindowBinding = function(){
+    console.log(this.name);
+};
+
+const windowObj = {
+    name : 'Safikur Rahman Mojammel',
+    age : 21,
+}
+WindowBinding.call(windowObj);

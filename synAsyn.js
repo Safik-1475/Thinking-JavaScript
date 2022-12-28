@@ -138,8 +138,30 @@ const customerOrderCompleted = (customer)=>{
     console.log(`${customer} for order completed`);
 };
 
-takeCustomerOrder('Safikur Rahman', (customer)=>{
-    customerOrderProcessing(customer,(customer)=>{
-        customerOrderCompleted(customer);
-    })
+// takeCustomerOrder('Safikur Rahman', (customer)=>{
+//     customerOrderProcessing(customer,(customer)=>{
+//         customerOrderCompleted(customer);
+//     })
+// });
+
+const hasZoomMeeting = false;
+const zoomMeeting = new Promise((resolve,reject)=>{
+    if(!hasZoomMeeting){
+        const zoomMeeting = {
+            name : 'Google Zoom Meeting ',
+            topic : 'Technical Idea',
+            time : '10:00 PM',
+        };
+        resolve(zoomMeeting);
+    }else {
+        reject(new Error(`Meeting already scheduled`));
+    }
 });
+
+// zoomMeeting
+//     .then(res=>{
+//         console.log(res);
+//     })
+//     .catch(err=>{
+//         console.log(err);
+//     })

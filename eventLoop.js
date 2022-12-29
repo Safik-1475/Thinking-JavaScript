@@ -21,7 +21,7 @@ const six = ()=>{
      console.log(`I'm six arrow function`);
      setTimeout(five,1000);
      new Promise((resolve,reject)=>{
-        resolve(`I'm right after five before fourth`)
+        resolve(`I'm right after fourth before five`)
      }).then((resolve)=>console.log(resolve));
      fourth();
 }

@@ -24,9 +24,14 @@ const sendRequest = (method,url,data)=>{
         const xhr = new XMLHttpRequest();
         xhr.open(method,url);
         xhr.responseType = 'json';
+        xhr.setRequestHeader('Content-type','application/json');
         xhr.send(data);
         xhr.onload = ()=>{
             resolve(xhr.response);
+        };
+
+        xhr.onerror = ()=>{
+            reject('Something was wrong!')
         }
     });
     return promise;
@@ -48,7 +53,10 @@ const sendData = ()=>{
         profession : 'Frontend Engineer',
     })).then(responseData=>{
         console.log(responseData);
-    });
+    })
+    .catch(error=>{
+        console.log(error);
+    })
 }
 
 getButton.addEventListener('click',getData);
